@@ -1,14 +1,15 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
+    title: ` Kohlíček Jan`,
+    author: `Jan Kohlíček`,
     description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    siteUrl: `https://kohlicek-blog.netlify.com/`,
     social: {
-      twitter: `kylemathews`,
+      linkedin: `kohlicekjan-78a63686`,
+      github: `kohlicekjan`
     },
   },
-  pathPrefix: "/blog",
+  pathPrefix: `/blog`,
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -43,6 +44,7 @@ module.exports = {
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
+          `gatsby-remark-autolink-headers`,
         ],
       },
     },
@@ -75,5 +77,14 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    `gatsby-plugin-emotion`,
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: `tomato`,
+        showSpinner: false,
+      },
+    },
+    `gatsby-plugin-sitemap`,
   ],
 }
