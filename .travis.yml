@@ -1,0 +1,27 @@
+language: node_js
+os: linux
+node_js:
+  - "node"
+
+branches:
+  only:
+    - master
+
+notifications:
+  email: false
+
+install:
+  - npm ci
+  - npm install -g gatsby
+
+script:
+  - npm test
+  - npm run build
+
+deploy:
+  provider: script
+  script:
+    - npm run deploy
+  skip_cleanup: true
+  on:
+    branch: master
