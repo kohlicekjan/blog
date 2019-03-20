@@ -3,6 +3,14 @@ import { Link } from "gatsby"
 
 import { rhythm, scale } from "../utils/typography"
 
+import styled from "@emotion/styled"
+import { css } from "@emotion/core"
+
+const Title = styled.h3`
+  font-family: Montserrat, sans-serif;
+  margin-top: 0;
+`
+
 class Layout extends React.Component {
   render() {
     const { location, title, children } = this.props
@@ -32,12 +40,7 @@ class Layout extends React.Component {
       )
     } else {
       header = (
-        <h3
-          style={{
-            fontFamily: `Montserrat, sans-serif`,
-            marginTop: 0,
-          }}
-        >
+        <Title>
           <Link
             style={{
               boxShadow: `none`,
@@ -48,7 +51,7 @@ class Layout extends React.Component {
           >
             {title}
           </Link>
-        </h3>
+        </Title>
       )
     }
     return (

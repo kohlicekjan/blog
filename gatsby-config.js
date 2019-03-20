@@ -88,3 +88,13 @@ module.exports = {
     `gatsby-plugin-sitemap`,
   ],
 }
+
+
+// add plugin after basic develop
+// gatsby-plugin-catch-links
+// gatsby-remark-external-links
+// gatsby-cypress
+// gatsby-plugin-netlify
+// gatsby-plugin-netlify-cms
+
+//gatsby-plugin-typography
