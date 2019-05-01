@@ -32,7 +32,6 @@ Static files will be built to `public/`
 $ npm run build
 ```
 
-
 ### Start the server
 ```sh
 $ npm run serve
@@ -40,3 +39,13 @@ $ npm run serve
 
 Your site is now running at `http://localhost:8000`
 
+<!--
+## Docker
+```sh
+docker build -t kohlicekjan/blog .
+```
+
+```sh
+docker run -it --rm -p 8082:8081 kohlicekjan/blog:latest
+```
+ -->
