@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: ` Kohlíček Jan`,
+    title: `Kohlíček Blog`,
     author: `Jan Kohlíček`,
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://kohlicek-blog.netlify.com/`,
@@ -45,6 +45,7 @@ module.exports = {
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
           `gatsby-remark-autolink-headers`,
+          `gatsby-remark-external-links`,
         ],
       },
     },
@@ -86,13 +87,13 @@ module.exports = {
       },
     },
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-robots-txt`,
+    `gatsby-plugin-catch-links`,
   ],
 }
 
 
 // add plugin after basic develop
-// gatsby-plugin-catch-links
-// gatsby-remark-external-links
 // gatsby-cypress
 // gatsby-plugin-netlify
 // gatsby-plugin-netlify-cms

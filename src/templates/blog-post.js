@@ -4,7 +4,31 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+
 import { rhythm, scale } from "../utils/typography"
+import styled from "@emotion/styled"
+
+
+const InfoBlogPost = styled.p`
+  ${scale(-1 / 5)};
+  display: block;
+  margin-bottom: ${rhythm(1)};
+  margin-top: ${rhythm(-1)};
+`
+
+const Pagination = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: ${rhythm(3)};
+`
+
+const Separator = styled.hr`
+  margin-bottom: ${rhythm(1)};
+`
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -19,33 +43,13 @@ class BlogPostTemplate extends React.Component {
           description={post.frontmatter.description || post.excerpt}
         />
         <h1>{post.frontmatter.title}</h1>
-        <p
-          style={{
-            ...scale(-1 / 5),
-            display: `block`,
-            marginBottom: rhythm(1),
-            marginTop: rhythm(-1),
-          }}
-        >
+        <InfoBlogPost>
           {post.frontmatter.date}
-        </p>
+        </InfoBlogPost>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
+        <Separator />
         <Bio />
-
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
+        <Pagination>
           <li>
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
@@ -60,7 +64,7 @@ class BlogPostTemplate extends React.Component {
               </Link>
             )}
           </li>
-        </ul>
+        </Pagination>
       </Layout>
     )
   }
@@ -82,7 +86,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "DD. MM. YYYY")
         description
       }
     }

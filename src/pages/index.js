@@ -4,7 +4,15 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+
 import { rhythm } from "../utils/typography"
+import styled from "@emotion/styled"
+
+
+const TitleBlogPost = styled.h3`
+  margin-bottom: ${rhythm(1 / 4)};
+`
+
 
 class BlogIndex extends React.Component {
   render() {
@@ -14,24 +22,19 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO
+        <SEO 
           title="All posts"
-          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
-        />
+          description=""  />
         <Bio />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
             <div key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+              <TitleBlogPost>
+                <Link to={node.fields.slug}>
                   {title}
                 </Link>
-              </h3>
+              </TitleBlogPost>
               <small>{node.frontmatter.date}</small>
               <p
                 dangerouslySetInnerHTML={{
@@ -63,7 +66,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "DD. MM. YYYY")
             title
             description
           }

@@ -10,6 +10,7 @@ import { StaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 
 import { rhythm } from "../utils/typography"
+import styled from "@emotion/styled"
 
 function Bio() {
   return (
@@ -18,31 +19,15 @@ function Bio() {
       render={data => {
         const { author, social } = data.site.siteMetadata
         return (
-          <div
-            style={{
-              display: `flex`,
-              marginBottom: rhythm(2.5),
-            }}
-          >
-            <Image
-              fixed={data.avatar.childImageSharp.fixed}
-              alt={author}
-              style={{
-                marginRight: rhythm(1 / 2),
-                marginBottom: 0,
-                minWidth: 50,
-                borderRadius: `100%`,
-              }}
-              imgStyle={{
-                borderRadius: `50%`,
-              }}
-            />
+          <div>
+            <strong>{author}</strong>
             <p>
-              Written by <strong>{author}</strong> who lives and works in San
-              Francisco building useful things.
+              <a href={`https://github.com/${social.github}`}>
+                GitHub
+              </a>
               {` `}
               <a href={`https://www.linkedin.com/in/${social.linkedin}`}>
-                My linkedin
+                LinkedIn 
               </a>
             </p>
           </div>
