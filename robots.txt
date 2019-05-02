@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://kohlicek-blog.netlify.com/sitemap.xml
+Host: https://kohlicek-blog.netlify.com
